@@ -86,7 +86,8 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.NameVi
                 .setPositiveButton("Update", (dialog1, which) -> {
                     Location location = new Location();
                     location.setId(locations.get(position).getId());
-                    location.setName(locations.get(position).getName());
+                    location.setName(taskEditText.getText().toString());
+                    Toast.makeText(context,location.toString(),Toast.LENGTH_SHORT).show();
                     locationDAO.update(location);
                     dataChange();
                 })
