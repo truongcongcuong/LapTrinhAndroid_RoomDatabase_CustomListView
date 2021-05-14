@@ -84,10 +84,13 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.NameVi
                 .setMessage("Enter new Location")
                 .setView(taskEditText)
                 .setPositiveButton("Update", (dialog1, which) -> {
-                    Location location = new Location();
-                    location.setId(locations.get(position).getId());
+//                    Location location = new Location();
+//                    location.setId(locations.get(position).getId());
+//                    location.setName(taskEditText.getText().toString());
+//                    Toast.makeText(context,location.toString(),Toast.LENGTH_SHORT).show();
+//                    locationDAO.update(location);
+                    Location location = locations.get(position);
                     location.setName(taskEditText.getText().toString());
-                    Toast.makeText(context,location.toString(),Toast.LENGTH_SHORT).show();
                     locationDAO.update(location);
                     dataChange();
                 })

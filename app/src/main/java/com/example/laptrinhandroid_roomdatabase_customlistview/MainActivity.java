@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         rcv_location.setLayoutManager(new GridLayoutManager(this,1));
 
         //
-
+        btt_add.setText("Add");
+        btt_cancel.setText("Cancel");
+        btt_cancel.setOnClickListener(v->edt_location.setText(""));
         btt_add.setOnClickListener(v->{
             String txt_location = edt_location.getText().toString();
             if (!txt_location.equalsIgnoreCase("")) {
